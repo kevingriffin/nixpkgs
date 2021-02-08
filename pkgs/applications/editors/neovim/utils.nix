@@ -138,7 +138,7 @@ let
       else funOrList);
 
       res = makeNeovimConfig {
-        withPython2 = withPython;
+        withPython2 = false;
         extraPythonPackages = compatFun extraPythonPackages;
         inherit withPython3;
         extraPython3Packages = compatFun extraPython3Packages;

@@ -1,6 +1,6 @@
 { lib, stdenv, fetchFromGitHub, cmake, gettext, msgpack, libtermkey, libiconv
 , libuv, lua, ncurses, pkg-config
-, unibilium, xsel, gperf
+, unibilium, xsel, gperf, tree-sitter
 , libvterm-neovim
 , glibcLocales ? null, procps ? null
 
@@ -31,13 +31,13 @@ let
 in
   stdenv.mkDerivation rec {
     pname = "neovim-unwrapped";
-    version = "0.4.4";
+    version = "0.5.0";
 
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "neovim";
-      rev = "v${version}";
-      sha256 = "11zyj6jvkwas3n6w1ckj3pk6jf81z1g7ngg4smmwm7c27y2a6f2m";
+      rev = "02a3c417945e7b7fc781906a78acbf88bd44c971";
+      sha256 = "16p69fgv1pr5n1rx1mnvj7j4c310ygn8xmiysivjsmvra6w93i6y";
     };
 
     patches = [
@@ -56,6 +56,7 @@ in
       libvterm-neovim
       luv.libluv
       msgpack
+      tree-sitter
       ncurses
       neovimLuaEnv
       unibilium

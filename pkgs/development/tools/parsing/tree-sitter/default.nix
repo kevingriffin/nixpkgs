@@ -133,7 +133,9 @@ rustPlatform.buildRustPackage {
       * Robust enough to provide useful results even in the presence of syntax errors
       * Dependency-free so that the runtime library (which is written in pure C) can be embedded in any application
     '';
-    license = licenses.mit;
-    maintainers = with maintainers; [ Profpatsch ];
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ Profpatsch ];
+    # Aarch has test failures with how tree-sitter compiles the generated C files
+    broken = false;
   };
 }
