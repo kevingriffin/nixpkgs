@@ -12,6 +12,8 @@ buildPythonPackage rec {
     sha256 = "5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220";
   };
 
+  doCheck = false;
+
   meta = {
     description = "Run a subprocess in a pseudo terminal";
     homepage = "https://github.com/pexpect/ptyprocess";
